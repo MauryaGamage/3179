@@ -8,13 +8,108 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 <script src="vega_lite_vis.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Global Cost of Living (2022)</title>
 </head>
 <body>
 <h1>Global Cost of Living (2022)</h1>
-<div id="world_map">
+<div class="container">
+    <div class="map">
+        <div id="world_map"></div>
+        <div class="idiom">
+            <h2>Idiom 1: Average Meal Cost</h2>
+            <div class="chart">
+                <canvas id="barChart" width="400" height="400"></canvas>
+            </div>
+            <p>This bar chart shows the average cost of an inexpensive restaurant meal (USD) in the selected city.</p>
+        </div>
+    </div>
+
+    <div class="chart1">
+        <div id="bar_chart"></div>
+        <div class="idiom">
+            <h2>Idiom 2: Restaurant vs. Market Prices</h2>
+            <div class="chart">
+                <canvas id="lineChart" width="400" height="400"></canvas>
+            </div>
+            <p>This line chart compares the cost of a three-course meal for two people in a mid-range restaurant (USD) with the cost of various items in the local market (USD).</p>
+        </div>
+    </div>
+
+    <div class="chart2">
+        <div class="idiom">
+            <h2>Idiom 3: Transportation Costs</h2>
+            <div class="chart">
+                <canvas id="pieChart" width="400" height="400"></canvas>
+            </div>
+            <p>This pie chart visualizes different transportation costs, including one-way local transport, monthly pass price, taxi start and distance tariffs, and gasoline price (all in USD).</p>
+        </div>
+    </div>
+
+    <div class="chart3">
+        <!-- Idiom 4 -->
+        <div class="idiom">
+            <h2>Idiom 4: Housing Prices</h2>
+            <div class="chart">
+                <canvas id="doughnutChart" width="400" height="400"></canvas>
+            </div>
+            <p>This doughnut chart represents the cost of apartments in the city center and outside of the center for 1-bedroom and 3-bedroom apartments (all in USD).</p>
+        </div>
+    </div>
+
+    <div class="chart4">
+         <!-- Idiom 5 -->
+         <div class="idiom">
+            <h2>Idiom 5: Income and Mortgage Rate</h2>
+            <div class="chart">
+                <canvas id="radarChart" width="400" height="400"></canvas>
+            </div>
+            <p>This radar chart illustrates the average monthly net salary (USD) and the annual mortgage interest rate (as a percentage) for a 20-year fixed-rate mortgage.</p>
+        </div>
+    </div>
+    <div class="conclusion">
+        <p>Understanding the cost of living is crucial for individuals planning to relocate to a new city. The data presented here can help you make informed decisions about your financial future.</p>
+    </div>
+    
 </div>
-<div id="bar_chart">
-</div>
+<script>
+    // Extract data from the CSV (assuming it's already available in JavaScript)
+    const data = {
+        labels: ['X1', 'X2', 'X3', 'X4', 'X5'],
+        datasets: [{
+            label: 'Values',
+            data: [4.9, 22.04, 4.28, 1.84, 3.67],
+            backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)', 'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)', 'rgba(153, 102, 255, 0.6'],
+        }]
+    };
+
+    // Bar Chart
+    const ctxBar = document.getElementById('barChart').getContext('2d');
+    new Chart(ctxBar, {
+        type: 'bar',
+        data: data
+    });
+
+    // Line Chart
+    const ctxLine = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctxLine, {
+        type: 'line',
+        data: data
+    });
+
+    // Pie Chart
+    const ctxPie = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctxPie, {
+        type: 'pie',
+        data: data
+    });
+
+    // Doughnut Chart
+    const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+    new Chart(ctxDoughnut, {
+        type: 'doughnut',
+        data: data
+    });
+</script>
 </body>
 </html>
