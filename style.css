@@ -2,54 +2,51 @@
 
 /* Apply background color to the body */
 body {
-    background-color: #ad2525;
+    font-family: Impact, sans-serif, sans-serif;
+    background-color: #436fc0;
     margin: 0;
     padding: 0;
+}
+
+.pad{
+    margin-bottom: 10px;
 }
 
 .container {
     max-width: 960px;
     margin: 0 auto;
-    background-color: #afbb0a;
+    background-color: #445D48;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 100px 50px 50px gray;
+
+}
+
+.map, .conclusion .chart1{
+    justify-content: center; 
+    align-items: center; 
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #D6CC99;
+}
+
+h2 {
+    text-align: center;
+    color: #001524;
 }
 
 /* Style the idioms */
 .idiom {
-    background-color: #f8f8f8;
-    padding: 20px;
+    background-color: #FDE5D4;
+    padding: 25px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 15px;
+    margin: 10px;
 }
 
-/* Add more specific styles for elements as needed */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1032a0;
-    margin: 0;
-    padding: 0;
-}
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-}
-
-h1, h2 {
-    color: #070000;
-}
 
 /* Style the sections */
 .section {
@@ -74,7 +71,7 @@ p {
 
 .container {  display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.6fr 1.7fr;
+    grid-template-rows: .5fr 0.6fr 1.7fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:

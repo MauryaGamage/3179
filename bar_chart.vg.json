@@ -43,10 +43,14 @@
       "type": "quantitative",
       "title": "Average Cost"
     },
+    "color":{"value": "#4D4D4D"},
     "tooltip": [
       {"field": "country", "type": "nominal", "title": "Country"},
       {"field": "cost", "type": "quantitative", "title": "Cost"},
       {"field": "Cost_Category", "type": "nominal", "title": "Cost Category"}
     ]
+  },
+  "config": {
+    "background": "#d6c2b3"
   }
 }

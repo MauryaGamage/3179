@@ -3,7 +3,7 @@
   "title": "Global Cost of Living (2022)",
   "width": 800,
   "height": 400,
-  "projection": {"type": "equirectangular"},
+  "projection": {"type": "equalEarth"},
   "layer": [
     {
       "data": {
@@ -23,7 +23,7 @@
         "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+      "mark": {"type": "geoshape", "fill": "#a1d99b", "stroke": "black"}
     },
     {
       "data": {
@@ -31,32 +31,47 @@
         "format": {"type": "topojson", "feature": "ne_50m_populated_places"}
       },
       "transform": [
-    {
-      "lookup": "properties.NAME",
-      "from": {
-        "data": {
-          "url": "cost-of-living.csv"
+        {
+          "lookup": "properties.NAME",
+          "from": {
+            "data": {
+              "url": "cost-of-living.csv"
+            },
+            "key": "city",
+            "fields": ["x1", "x28", "x36", "x41", "x42", "x43", "x48"]
+          }
         },
-        "key": "city",
-        "fields": ["x1"]
+        {
+          "calculate": "datum.x48 * 0.30 + (datum.x1 * 0.20)*30 + datum.x28 * 0.10 + datum.x36 * 0.10 + datum.x41 * 0.05 + datum.x42 * 0.10 + datum.x43 * 0.15",
+          "as": "est_cost_living"
+        },
+        {
+          "filter": "datum.est_cost_living > 0"
+        }
+      ],
+      "mark": {"type": "geoshape" ,"opacity": 0.9},
+      "encoding": {
+        "color": {
+          "title": "Estimated Cost of living(USD)",
+          "field": "est_cost_living",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "scheme": "darkblue"
+          },
+          "legend": {
+            "orient": "bottom-left", 
+            "title": "Cost of a meal"   
+          }
+        },
+        "tooltip": [
+          {"field": "properties.NAME", "type": "nominal", "title": "City"},
+          {"field": "est_cost_living", "type": "quantitative"}
+        ]
       }
-    },
-    {"calculate": "datum.x1", "as": "meals"}
-  ],
-  "mark": {"type": "geoshape" },
-  "encoding": {
-    "color": {
-      "title": "Cost of a meal(USD)",
-      "field": "meals",
-      "type": "quantitative",
-      "scale": {"type": "linear", "scheme": "reds"}
-      
-    },
-    "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "City"},
-      {"field": "meals", "type": "quantitative"}
-    ]
-  }
     }
-  ]
+  ],
+  "config": {
+    "background": "#d6c2b3"
+  }
 }
