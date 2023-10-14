@@ -7,3 +7,9 @@ var vg_2 = "bar_chart.vg.json";
 vegaEmbed("#bar_chart", vg_2).then(function(result) {
 // Access the Vega view instance(https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
+
+var vg_3 = "housing_city.vg.json";
+vegaEmbed("#housing_chart", vg_3).then(function(result) {
+// Access the Vega view instance(https://vega.github.io/vega/docs/api/view/) as result.view
+}).catch(console.error);
+

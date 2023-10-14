@@ -1,7 +1,38 @@
 /* Add general styles */
+
+/* Apply background color to the body */
+body {
+    background-color: #ad2525;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #afbb0a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Style the idioms */
+.idiom {
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Add more specific styles for elements as needed */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
+    background-color: #1032a0;
     margin: 0;
     padding: 0;
 }
@@ -17,7 +48,7 @@ h1 {
 }
 
 h1, h2 {
-    color: #333;
+    color: #070000;
 }
 
 /* Style the sections */
@@ -43,13 +74,12 @@ p {
 
 .container {  display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.6fr 1.7fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "map map"
-      "chart1 chart2"
-      "chart3 chart4"
+      "chart1 bar_chart"
       "conclusion conclusion";
   }
   
@@ -57,11 +87,11 @@ p {
   
   .chart1 { grid-area: chart1; }
   
-  .chart2 { grid-area: chart2; }
-  
-  .chart3 { grid-area: chart3; }
-  
-  .chart4 { grid-area: chart4; }
-  
   .conclusion { grid-area: conclusion; }
+  
+  .bar_chart { grid-area: bar_chart; }
+  
+  
+  
+  
   

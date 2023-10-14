@@ -27,8 +27,8 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/MauryaHG/cost-living-data/main/ne_110m_populated_places.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_populated_places"}
+        "url": "https://raw.githubusercontent.com/MauryaGamage/3179/master/ne.topojson",
+        "format": {"type": "topojson", "feature": "ne_50m_populated_places"}
       },
       "transform": [
     {

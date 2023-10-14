@@ -4,18 +4,42 @@
     "width": 800,
     "height": 400,
 
-    "projection": {"type": "equirectangular"},
+    
     "params": [
-    {
-      "name": "countrySelection",
-      "value": "All Countries",
+      {
+      "name": "zoom_level",
+      "value": 350,
       "bind": {
-        "input": "select",
-        "options": ["All Countries", "India", "Australia", "Country 3"],
-        "name": "Select Country"
+      "input": "range",
+      "min": 250,
+      "max": 1000,
+      "step": 100,
+      "name": "Zoom: "
       }
-    }
+      },
+      
+      {
+        "name": "center_to",
+        "value": [130, -30],
+        "bind": {
+        "input": "select",
+        "options": [
+          [130, -30],
+              [105, 5],
+              [82, 13],
+              [-100, 40]
+        ],
+        "labels": ["Australia", "Malasiya", "Sri lanka", "America"],
+        "name": "Map Centre: "
+        }
+      }
   ],
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  
     "layer": [
       {
         "data": {
@@ -30,9 +54,10 @@
           "type": "geoshape"
         }
       },
+
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+          "url": "https://raw.githubusercontent.com/MauryaGamage/3179/master/ne.topojson",
           "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
         },
         "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
@@ -42,8 +67,8 @@
       {
         
         "data": {
-          "url": "https://raw.githubusercontent.com/MauryaHG/cost-living-data/main/ne_110m_populated_places.topojson",
-          "format": {"type": "topojson", "feature": "ne_110m_populated_places"}
+          "url": "https://raw.githubusercontent.com/MauryaGamage/3179/master/ne.topojson",
+          "format": {"type": "topojson", "feature": "ne_50m_populated_places"}
         },
         "transform": [
       {
@@ -61,7 +86,7 @@
         "sort": [{"field": "x48", "order": "descending"}]
       },
       {
-        "filter": "datum.ranking <= 11"
+        "filter": "datum.ranking <= 110000"
       },
       
 
