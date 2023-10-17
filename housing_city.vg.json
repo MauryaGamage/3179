@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Cost of Living (2022)",
   "width": 800,
   "height": 400,
   "params": [

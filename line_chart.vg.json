@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 400,
+  "data": {
+    "url": "cost-of-living-with-continent.csv"
+  },
+  "layer": [
+    {
+      "mark": "point",
+      "transform": [
+        {
+          "calculate": "datum.x48 * 0.30 + (datum.x1 * 0.20) * 30 + datum.x28 * 0.10 + datum.x36 * 0.10 + datum.x41 * 0.05 + datum.x42 * 0.10 + datum.x43 * 0.15",
+          "as": "est_cost_living"
+        },
+        {
+          "filter": "datum.est_cost_living > 0"
+        },
+        {
+          "filter": "datum.x54 > 0"
+        }
+      ],
+      "encoding": {
+        "x": {"field": "x54", "type": "quantitative", "title": "Average Monthly Net Salary (USD)"},
+        "y": {"field": "est_cost_living", "type": "quantitative", "title": "Estimated Cost of Living (USD)",
+          "scale": {
+            "type": "linear",
+            "scheme": "darkblue"
+          }},
+        "color": {"field": "region", "type": "nominal", "title": "Region",
+          "legend": {
+            "title": "Regions",
+            "orient": "top-right",
+            "fillColor": "floralwhite",
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {"field": "city", "type": "nominal", "title": "City"},
+          {"field": "x54", "type": "quantitative", "title": "Average Monthly Net Salary (USD)"},
+          {"field": "est_cost_living", "type": "quantitative", "title": "Estimated Cost of Living (USD)"},
+          {"field": "region", "type": "nominal", "title": "Region"}
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "#d6c2b3"
+  }
+}

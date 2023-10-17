@@ -16,36 +16,139 @@
 <div class="container">
 
     <div class="map"> 
-        <h1>Global Cost of Living (2022)</h1>
+        <h1>💸 Global Cost of Living (2022) 💸</h1>
         <div class="idiom">
-            <h2>Idiom 1: Average Meal Cost</h2>
+            <h2>Estimated Cost of Living</h2>
             <div class="chart">
                 <div id="world_map"></div>
             </div>
-            <p>This bar chart shows the average cost of an inexpensive restaurant meal (USD) in the selected city.</p>
+                <h3>Understanding Estimated Cost of Living</h3>
+                <p>The world map chart above provides a visual representation of the estimated cost of living in various cities around the globe. This estimation is derived from a calculation that takes into account several key factors relevant to daily life.</p>
+                <p>To arrive at the estimated cost of living for each city, a specific equation is applied. This equation includes a selection of factors commonly considered when calculating the cost of living. These factors have different weights based on their relative importance in the overall estimation. The equation for estimating the cost of living is as follows:</p>
+                <p><strong>Estimated Cost of Living = (0.30 * Housing) + (0.20 * Food) + (0.10 * Transportation) + (0.10 * Utilities) + (0.05 * Entertainment) + (0.10 * Healthcare) + (0.15 * Education)</strong></p>
+                <p>Let's break down the components of this equation:</p>
+                <ul>
+                    <li><strong>Housing:</strong> This factor accounts for the cost of renting a 1-bedroom apartment in the city center.</li>
+                    <li><strong>Food:</strong> It considers the cost of a meal for 2 people at a mid-range restaurant.</li>
+                    <li><strong>Transportation:</strong> This part takes into consideration the cost of a one-way ticket for local transport.</li>
+                    <li><strong>Utilities:</strong> It reflects the cost of basic utilities for an 85m2 apartment.</li>
+                    <li><strong>Entertainment:</strong> It includes the cost of a cinema ticket.</li>
+                    <li><strong>Healthcare:</strong> It considers the cost of healthcare, including doctor's visits, medication, and more.</li>
+                    <li><strong>Education:</strong> This accounts for the cost of preschool or primary school for a child.</li>
+                </ul>
+                <p>These factors are assigned specific weights in the equation, reflecting their relative significance when calculating the cost of living. By assigning weights in this manner, the estimation becomes a weighted average of these factors, providing a comprehensive view of the cost of living in each city.</p>
+                <p>The world map chart helps us visualize how these estimated costs of living vary from one city to another, offering valuable insights for individuals planning to relocate or plannning a trip to make informed decisions about their financial future.</p>
+                <p>Please note that this is a simplified estimation, and real-world cost of living calculations may involve more factors and a more complex modeling approach. Additionally, actual living costs can vary based on individual circumstances and lifestyle choices.</p>
         </div>
     </div>
 
-    <div class="chart1">
+    <div class="bar_chart1">
         <div class="idiom">
-            <div id="bar_chart"></div>
+            <div id="bar_chart1"></div>
+            
         </div>
     </div>
 
-    <div class="bar_chart">
+    <div class="explanation_1">
         <div class="idiom">
-            <h2>Idiom 2: Restaurant vs. Market Prices</h2>
-            <p>This line chart compares the cost of a three-course meal for two people in a mid-range restaurant (USD) with the cost of various items in the local market (USD).</p>
+            <h2>Cheapeast Countries</h2>
+            <p>Use the dropdown menu to select a specific attribute, such as the cost of a meal in an inexpensive restaurant, a bottle of wine, or a one-way local transport ticket. The bar chart on the left displays the top 15 countries with the most affordable prices for your chosen attribute. The countries are ranked in ascending order, making it easy to identify the most budget-friendly destinations. Discover where you can get the best value for your selected expense and plan your next adventure accordingly.</p>
+        </div>
+    </div>
+
+    <div class="bar_chart2">
+        <div class="idiom">
+            <div id="bar_chart2"></div>
+        </div>
+    </div>
+
+    <div class="explanation_2">
+        <div class="idiom">
+            <h2> World's Most Expensive Destinations</h2>
+            <p> Use the dropdown menu to select a specific attribute, such as the cost of a meal in an inexpensive restaurant, a bottle of wine, or a one-way local transport ticket. The bar chart on the right displays the top 15 countries with the most expensive prices for your chosen attribute. The countries are ranked in descending order, helping you identify the most luxurious destinations. Discover where the cost of living is high, and plan your travel or relocation decisions accordingly.</p>
         </div>
     </div>
 
     <div class="conclusion">
         <div class="idiom">
-            <h2>Idiom 2: Restaurant vs. Market Prices</h2>
+            <h2>Discover City Living Costs</h2>
             <div id="housing_chart"></div>
-            <p>Understanding the cost of living is crucial for individuals planning to relocate to a new city. The data presented here can help you make informed decisions about your financial future.</p>
+            <p>Select a country from the dropdown menu, and the map chart above will display major cities within that country along with their corresponding costs for a one-bedroom house in USD. Use this valuable information to plan your next trip or make informed decisions about relocating to a new city. Whether you're a traveler or a prospective resident, this data will help you budget effectively and choose the city that best suits your financial preferences.</p>
+</div>
+    </div>
+
+    <div id= "drop_down" class= "idiom">
+        <div class= "option"><label for="costCategory">Select Cost Category:</label>
+            <select id="costCategory">
+                <option value="x1">Meal, Inexpensive Restaurant (USD)</option>
+                <option value="x2">Meal for 2 People, Mid-range Restaurant, Three-course (USD)</option>
+                <option value="x3">McMeal at McDonald's (or Equivalent Combo Meal) (USD)</option>
+                <option value="x4">Domestic Beer (0.5 liter draught, in restaurants) (USD)</option>
+                <option value="x5">Imported Beer (0.33 liter bottle, in restaurants) (USD)</option>
+                <option value="x6">Cappuccino (regular, in restaurants) (USD)</option>
+                <option value="x7">Coke/Pepsi (0.33 liter bottle, in restaurants) (USD)</option>
+                <option value="x8">Water (0.33 liter bottle, in restaurants) (USD)</option>
+                <option value="x9">Milk (regular), (1 liter) (USD)</option>
+                <option value="x10">Loaf of Fresh White Bread (500g) (USD)</option>
+                <option value="x11">Rice (white), (1kg) (USD)</option>
+                <option value="x12">Eggs (regular) (12) (USD)</option>
+                <option value="x13">Local Cheese (1kg) (USD)</option>
+                <option value="x14">Chicken Fillets (1kg) (USD)</option>
+                <option value="x15">Beef Round (1kg) (or Equivalent Back Leg Red Meat) (USD)</option>
+                <option value="x16">Apples (1kg) (USD)</option>
+                <option value="x17">Banana (1kg) (USD)</option>
+                <option value="x18">Oranges (1kg) (USD)</option>
+                <option value="x19">Tomato (1kg) (USD)</option>
+                <option value="x20">Potato (1kg) (USD)</option>
+                <option value="x21">Onion (1kg) (USD)</option>
+                <option value="x22">Lettuce (1 head) (USD)</option>
+                <option value="x23">Water (1.5 liter bottle, at the market) (USD)</option>
+                <option value="x24">Bottle of Wine (Mid-Range, at the market) (USD)</option>
+                <option value="x25">Domestic Beer (0.5 liter bottle, at the market) (USD)</option>
+                <option value="x26">Imported Beer (0.33 liter bottle, at the market) (USD)</option>
+                <option value="x27">Cigarettes 20 Pack (Marlboro) (USD)</option>
+                <option value="x28">One-way Ticket (Local Transport) (USD)</option>
+                <option value="x29">Monthly Pass (Regular Price) (USD)</option>
+                <option value="x30">Taxi Start (Normal Tariff) (USD)</option>
+                <option value="x31">Taxi 1km (Normal Tariff) (USD)</option>
+                <option value="x32">Taxi 1hour Waiting (Normal Tariff) (USD)</option>
+                <option value="x33">Gasoline (1 liter) (USD)</option>
+                <option value="x34">Volkswagen Golf 1.4 90 KW Trendline (Or Equivalent New Car) (USD)</option>
+                <option value="x35">Toyota Corolla Sedan 1.6l 97kW Comfort (Or Equivalent New Car) (USD)</option>
+                <option value="x36">Basic (Electricity, Heating, Cooling, Water, Garbage) for 85m2 Apartment (USD)</option>
+                <option value="x37">1 min. of Prepaid Mobile Tariff Local (No Discounts or Plans) (USD)</option>
+                <option value="x38">Internet (60 Mbps or More, Unlimited Data, Cable/ADSL) (USD)</option>
+                <option value="x39">Fitness Club, Monthly Fee for 1 Adult (USD)</option>
+                <option value="x40">Tennis Court Rent (1 Hour on Weekend) (USD)</option>
+                <option value="x41">Cinema, International Release, 1 Seat (USD)</option>
+                <option value="x42">Preschool (or Kindergarten), Full Day, Private, Monthly for 1 Child (USD)</option>
+                <option value="x43">International Primary School, Yearly for 1 Child (USD)</option>
+                <option value="x44">1 Pair of Jeans (Levis 501 Or Similar) (USD)</option>
+                <option value="x45">1 Summer Dress in a Chain Store (Zara, H&M, …) (USD)</option>
+                <option value="x46">1 Pair of Nike Running Shoes (Mid-Range) (USD)</option>
+                <option value="x47">1 Pair of Men Leather Business Shoes (USD)</option>
+                <option value="x48">Apartment (1 bedroom) in City Centre (USD)</option>
+                <option value="x49">Apartment (1 bedroom) Outside of Centre (USD)</option>
+                <option value="x50">Apartment (3 bedrooms) in City Centre (USD)</option>
+                <option value="x51">Apartment (3 bedrooms) Outside of Centre (USD)</option>
+                <option value="x52">Price per Square Meter to Buy Apartment in City Centre (USD)</option>
+                <option value="x53">Price per Square Meter to Buy Apartment Outside of Centre (USD)</option>
+                <option value="x54">Average Monthly Net Salary (After Tax) (USD)</option>
+                <option value="x55">Mortgage Interest Rate in Percentages (%), Yearly, for 20 Years Fixed-Rate</option>
+            </select></div>
+        </div>
+    <div class="line_chart">
+        <div class="idiom">
+            <h2>City Cost Comparison: Salary vs. Living Cost</h2>
+            <div id="line_chart"></div>
+            <p>Delve into a global financial analysis with this scatter plot. The X-axis represents the average monthly salary for various cities, while the Y-axis displays the estimated monthly living cost in USD. Each city is color-coded according to its continent, making it easier to identify patterns and trends. This interactive visualization helps you compare cities from different parts of the world, providing valuable insights into the relationship between income and the cost of living. Whether you're planning a career move or seeking economic opportunities, this data will guide your financial decisions.</p>
         </div>
     </div>
 </div>
+<script>
+
+
+
+</script>
 </body>
 </html>

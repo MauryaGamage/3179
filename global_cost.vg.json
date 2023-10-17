@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Global Cost of Living (2022)",
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
@@ -8,10 +7,7 @@
     {
       "data": {
         "graticule": {
-          "step": [
-            30,
-            30
-          ]
+          "step": [29.99, 30]
         }
       },
       "mark": {
@@ -38,21 +34,20 @@
               "url": "cost-of-living.csv"
             },
             "key": "city",
-            "fields": ["x1", "x28", "x36", "x41", "x42", "x43", "x48"]
+            "fields": ["x1", "x28", "x36", "x41", "x42", "x43", "x48", "country"]
           }
         },
         {
-          "calculate": "datum.x48 * 0.30 + (datum.x1 * 0.20)*30 + datum.x28 * 0.10 + datum.x36 * 0.10 + datum.x41 * 0.05 + datum.x42 * 0.10 + datum.x43 * 0.15",
+          "calculate": "datum.x48 * 0.30 + (datum.x1 * 0.20) * 30 + datum.x28 * 0.10 + datum.x36 * 0.10 + datum.x41 * 0.05 + datum.x42 * 0.10 + datum.x43 * 0.15",
           "as": "est_cost_living"
         },
         {
           "filter": "datum.est_cost_living > 0"
         }
       ],
-      "mark": {"type": "geoshape" ,"opacity": 0.9},
+      "mark": {"type": "geoshape", "opacity": 0.9},
       "encoding": {
         "color": {
-          "title": "Estimated Cost of living(USD)",
           "field": "est_cost_living",
           "type": "quantitative",
           "scale": {
@@ -60,18 +55,19 @@
             "scheme": "darkblue"
           },
           "legend": {
-            "orient": "bottom-left", 
-            "title": "Cost of a meal"   
+            "orient": "bottom-left",
+            "title": "Est living cost (USD)"
           }
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "City"},
-          {"field": "est_cost_living", "type": "quantitative"}
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "est_cost_living", "type": "quantitative", "title": "Estimated Living Cost (USD)"}
         ]
       }
     }
   ],
   "config": {
-    "background": "#d6c2b3"
+    "background": "#FDE5D4"
   }
 }

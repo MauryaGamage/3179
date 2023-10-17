@@ -2,14 +2,26 @@
 
 /* Apply background color to the body */
 body {
-    font-family: Impact, sans-serif, sans-serif;
+    font-family: 'Autour One', sans-serif;
     background-color: #436fc0;
     margin: 0;
     padding: 0;
 }
 
-.pad{
-    margin-bottom: 10px;
+@font-face {
+    font-family: 'Autour One';
+    src: url('Autour_One/AutourOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#bar_chart1 {
+    width: 65%;
+    height: 60%;
+}
+
+#bar_chart2 {
+    width: 81%;
 }
 
 .container {
@@ -19,12 +31,13 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 100px 50px 50px gray;
-
+    height: fit-content; /* Set the height to fit the content */
 }
 
-.map, .conclusion .chart1{
-    justify-content: center; 
-    align-items: center; 
+#world_map,
+#housing_chart {
+    align-self: center;
+    padding-left: 37px;
 }
 
 h1 {
@@ -41,12 +54,13 @@ h2 {
 .idiom {
     background-color: #FDE5D4;
     padding: 25px;
-    margin-bottom: 20px;
     border-radius: 15px;
-    margin: 10px;
+    margin: 1%;
 }
 
-
+#drop_down {
+    margin-top: -14px;
+}
 
 /* Style the sections */
 .section {
@@ -57,11 +71,11 @@ h2 {
     border-radius: 5px;
 }
 
-/* Style the charts */
 canvas {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     display: block;
-    margin: 0 auto;
+    align-items: stretch;
 }
 
 /* Add some spacing between elements */
@@ -69,26 +83,53 @@ p {
     margin-bottom: 20px;
 }
 
-.container {  display: grid;
+.container {
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: .5fr 0.6fr 1.7fr;
+    grid-template-rows: auto; 
+    grid-auto-columns: 1fr;
     gap: 0px 0px;
-    grid-auto-flow: row;
     grid-template-areas:
-      "map map"
-      "chart1 bar_chart"
-      "conclusion conclusion";
-  }
-  
-  .map { grid-area: map; }
-  
-  .chart1 { grid-area: chart1; }
-  
-  .conclusion { grid-area: conclusion; }
-  
-  .bar_chart { grid-area: bar_chart; }
-  
-  
-  
-  
-  
+        "map map"
+        "bar_chart1 explanation_1"
+        "option option"
+        "bar_chart2 explanation_2"
+        "conclusion conclusion"
+        "line_chart line_chart";
+    grid-auto-flow: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.map {
+    grid-area: map;
+}
+
+.explanation_1 {
+    grid-area: explanation_1;
+}
+
+.conclusion {
+    grid-area: conclusion;
+}
+
+.option {
+    grid-area: option;
+}
+
+.explanation_2 {
+    grid-area: explanation_2;
+}
+
+.bar_chart2 {
+    grid-area: bar_chart2;
+}
+
+.bar_chart1 {
+    grid-area: bar_chart1;
+}
+
+.line_chart {
+    grid-area: line_chart;
+}
